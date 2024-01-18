@@ -25,8 +25,8 @@
   {{ with ($scr.Get "google_fonts") }}
     {{ if hasPrefix . "family=" }}
       {{/* If `google_fonts` starts with "family=", use API v2 (https://developers.google.com/fonts/docs/css2) */}}
-      <link rel="preload" as="style" {{ printf "href=\"https://fonts.googleapis.com/css2?%s&display=swap\"" . | safeHTMLAttr }}>
-      <link rel="stylesheet" {{ printf "href=\"https://fonts.googleapis.com/css2?%s&display=swap\"" . | safeHTMLAttr }} media="print" onload="this.media='all'">
+      <link rel="preload" as="style" {{ printf "href=\"/local/fonts.googleapis.com/css2.css?%s&display=swap\"" . | safeHTMLAttr }}>
+      <link rel="stylesheet" {{ printf "href=\"/local/fonts.googleapis.com/css2.css?%s&display=swap\"" . | safeHTMLAttr }} media="print" onload="this.media='all'">
     {{ else }}
       {{ errorf "There is a new version of Google Fonts. Learn how to upgrade your font pack at https://docs.hugoblox.com/customization/#custom-font" }}
     {{ end }}

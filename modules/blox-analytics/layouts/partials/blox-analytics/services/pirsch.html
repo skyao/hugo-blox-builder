@@ -1,5 +1,5 @@
 {{ $pirsch := site.Params.marketing.analytics.pirsch | default "" }}
 
 {{ if hugo.IsProduction | and $pirsch }}
-<script defer src="https://api.pirsch.io/pirsch.js" id="pirschjs" data-code="{{$pirsch}}"></script>
+<script defer src="/local/api.pirsch.io/pirsch.js" id="pirschjs" data-code="{{$pirsch}}"></script>
 {{ end }}
